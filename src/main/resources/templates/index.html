@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/index.css">
+	<title>Document</title>
+
+</head>
+
+<body>
+	<div class="titulo">
+		<h1>Muebleria S.A.</h1>
+		<button class="boton"><a href="/CerrarSesion">Cerrar Sesion</a></button>
+	</div>
+
+	<div class="contenedor">
+
+		<div class="banner" style="background: grey">
+			<h3>Usuario: <span th:text="${u.usuario}"></span></h3>
+			<p><strong></strong></p>
+			<img src="img/iconoUsuario.jpg" style="width:70%; margin-left: 9%; margin-top: 20%">
+			<br><br>
+			
+			<a style="text-align: center;" href="actualiza-datos.jsp">Actualiza Datos</a>
+
+		</div>
+
+		<div class="contenedor-conciertos">
+			<div class="card" style="background: green;"  >
+				<div class="textos">
+					<a href="/cargarMantenedores"><img alt="imagen no encontrada" src="./img/arriba.png"
+							style="width:50%"></a>
+
+					<h3>Mantenedores</h3>
+				</div>
+			</div>
+			<div class="card" style="background: purple;">
+				<div class="textos">
+					<a href="/cargarConsulta"><img alt="imagen no encontrada" src="./img/busqueda.png"
+							style="width:50%"></a>
+
+					<h3>Consultas</h3>
+
+				</div>
+			</div>
+
+			<h1 CLASS="titulo" style="margin:0px 38%">Muebleria S.A.</h1>
+
+			<div class="card" style="background: teal;"  th:if="${u.tipo} !=2">
+				<div class="textos">
+					<a href="canasta.jsp"><img alt="imagen no encontrada" src="./img/transaccion.png"
+							style="width:50%"></a>
+
+					<h3>Transacciones</h3>
+
+				</div>
+			</div>
+
+			<div class="card" style="background:orange;">
+				<div class="textos">
+					<a href="Reporte.jsp"><img alt="imagen no encontrada" src="./img/reporte.png" style="width:50%"></a>
+
+
+					<h3>Reporte y Ventas</h3>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>

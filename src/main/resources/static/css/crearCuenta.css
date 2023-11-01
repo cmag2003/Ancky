@@ -1,0 +1,59 @@
+body{
+    background-image: url(/img/FondoMueble.jpg);
+}
+
+.contenedor{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    background-color: #E7D2AC ;
+    margin: 15% auto;
+    border-radius: 10px ;
+    box-shadow: 7px 13px 37px #000
+}
+form{
+    margin-left: 5%;
+    height: 100%;
+}
+
+
+h1{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 220%;   
+}
+p{
+   font-family: Arial, Helvetica, sans-serif; 
+   font-size: 100%;
+   font-weight: bold;
+}
+input{
+    width: 180%;
+    height: 20px;
+    border-style: none;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+}
+
+
+button{
+    
+    width: 184%;
+    height: 35px;
+    background-color: #BCBCAC;
+    border-color: #BCBCAC;
+    font-weight: bold;
+    border-style: none;
+    margin-bottom: 10%;
+    margin-top: 10%;
+
+
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.5s;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"	href="CSS/estilo_listado.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/normalize_index.css">
+<link rel="stylesheet" href="/css/estilos.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+<title>Mantenedor Empleado</title>
+</head>
+<body>
+	<div class="titulo">
+		<h1>Muebleria S.A.</h1>
+		<button class="boton"><a class="boton" href="/cargarMantenedores">CERRAR</a></button>
+	</div>
+	<div class="contenedor">
+		<div class="container">
+
+			<main>
+				<section style="width: 75%; float: left;">
+					<h1>Mantenedor Empleado</h1>
+					<form action="/empleado/grabar" method="post" th:object="${empleado}">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Codigo</label> <input th:field="*{codigo}" type="text" class="form-control" id="cod"
+								aria-describedby="emailHelp" placeholder="Ingrese Codigo"
+								value="">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Nombre</label> <input th:field="*{nombre}" type="text" class="form-control" id="nom"
+								aria-describedby="emailHelp" placeholder="Ingrese Nombre"
+								value="">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Apellido</label> <input
+								th:field="*{apellido}" type="text" class="form-control"
+								id="ape" placeholder="Ingrese Apellido" value="">
+						</div>
+						<div class="form-group col-md-4">
+							<label for="inputState">Puesto</label> <select th:field="*{puesto}"
+								id="inputState" class="form-control">
+								<option selected value="0">Seleccione...</option> 
+								<option th:each="p : ${lstPuesto}" 
+								 th:value="${p.id_puesto}"
+								 th:text="${p.des_puesto}" ></option>
+								
+							</select>
+						</div>
+						<div th:class="${clase}" role="alert" th:text="${mensaje}"></div>
+						<input name="txtidentificar" type="text" class="form-control"
+							id="identify" value="" hidden=""> <button type="submit"
+							name="mantlista" class="btn btn-primary" value="mantMod">Modificar</button>
+						 <a href="/cargarMantenedorEmpleado" class="btn btn-primary" id="crea">Crear</a>
+						<button type="submit"name="btn" class="btn btn-primary" value="reg">Grabar</button>
+						<button type="submit"name="btn" target="_blank" class="btn btn-primary" value="fil">Filtro</button>
+						<a href="/reporteempleado"  target="_blank" class="btn btn-warning" > PDF</a>
+					</form>
+					
+				</section>
+			</main>
+			<footer> </footer>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+function Viajar(){
+
+	location.replace('\Mantenedores.html');
+	
+}
+</script>
+</html>

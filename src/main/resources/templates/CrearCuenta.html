@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/crearCuenta.css" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <form action="/usuario/grabar"  th:object="${usuarios}" method="post" >
+            <h1>CREAR CUENTA</h1>
+              <p>nombre</p>
+            <input  type="text" class="box" th:field="*{nombre}"  >
+              <p>apellido</p>
+            <input  type="text" class="box"  th:field="*{apellido}" >
+            <p>Usuario</p>
+            <input  name="txtUsuario" type="text" class="box" th:field="*{usuario}"  >
+            <p>Contraseña</p>
+            <input  name="txtClave" type="password" class="box" th:field="*{clave}" >
+            <p>fecha de nacimiento</p>
+            <input  type="date" class="box" th:field="*{fnacim}" >
+            <p for="inputProv">Tipo</p> 
+					<select id="inputProv" class="form-control"  th:field="*{tipo}"  >
+						<option value="-1">Seleccione...</option>
+						<option th:each="u : ${lstTipoUsuario}" th:value ="${u.idtipo}"  th:text ="${u.descripcion}"></option>
+					</select>
+					<div  class="registrar">
+					<p>¿ya tienes cuenta? <a href="/">ingrese aqui</a></p>
+					</div>
+           
+            <button type="submit"  >Crear cuenta</button>
+             <a th:text="${mensaje}" th:class="${clase}" role="alert" ></a>
+        </form>
+       
+    </div>
+</body>
+</html>

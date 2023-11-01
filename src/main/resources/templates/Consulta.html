@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/estilos.css">
+<title>Muebleria S.A.</title>
+</head>
+<body>
+<div class="titulo">
+		<h1>Muebleria S.A.</h1>
+		<button class="boton"><a class="boton" href="/CerrarSesion">Cerrar Sesion</a></button>
+	</div>
+<form action="mant" method="post">
+	<div class="contenedor">
+
+	
+		<div class="banner" style="background: grey">
+			<h3>Usuario: <span th:text="${usuario}"></span></span></h3>
+			<p><strong></strong></p>
+			<img src="img/iconoUsuario.jpg" style="width:70%; margin-left: 9%; margin-top: 20%">
+			<br><br>
+			
+			<a style="text-align: center;" href="actualiza-datos.jsp">Actualiza Datos</a>
+			
+			
+		
+		</div>
+		
+		<div class="contenedor-conciertos">
+			<div class="card" style="background: purple;">
+				<div class="textos">		
+					
+					<a href="/cargarConsultaCliente"><img alt="imagen no encontrada" src="./img/cliente.png" style="width:50%"></a>
+					
+				<h3>Cliente</h3>
+				</div>
+			</div>
+			
+			<div class="card" style="background: purple;">
+				<div class="textos">
+								
+					
+
+					<a href="/cargarConsultaProveedores"><img alt="imagen no encontrada" src="./img/proveedores.png" style="width:50%"></a>
+
+					
+					<h3>Proveedores</h3>
+				</div>
+			</div>
+			
+			<h1 CLASS="titulo" style="margin:0px 38%">Consulta</h1>
+			
+			<div class="card" style="background: purple;">
+				<div class="textos">
+					
+								<a href="/cargarConsultaProductos"><img alt="imagen no encontrada" src="./img/estrella.png" style="width:50%"></a>
+
+				<h3>Producto</h3>
+				</div>
+			</div>
+			<div class="card" style="background:purple;">
+           <div class="textos">
+			   
+				<a href="/cargarConsultaEmpleado"><img alt="imagen no encontrada" src="./img/empleados.png" style="width:50%"></a>
+					
+					<h3>Empleados</h3>
+					
+				</div>
+			</div>
+			
+		</div>
+
+
+	</div>
+	</form>	
+
+</body>
+<script type="text/javascript">
+
+function Viajar(){
+
+	location.replace('\index.html');
+	
+}
+
+</script>

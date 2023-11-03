@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.muebleria.repository.ITipoUsuarioRepository;
 import com.muebleria.repository.IUsuariosRepository;
+import com.muebleria.repository.iBoletaRepository;
 import com.muebleria.model.Usuario;
+import com.muebleria.model.Boleta;
 import com.muebleria.model.Clientes;
 import com.muebleria.model.Empleados;
 import com.muebleria.model.Productos;
@@ -49,6 +51,9 @@ public class MuebleriaController {
 			
 			@Autowired
 			private  iPuestoRepository repoPues;
+			
+			@Autowired
+			private  iBoletaRepository repoBol;
 			
 			@Autowired
 			private  iProveedorRepository repoProv;
@@ -113,6 +118,7 @@ public class MuebleriaController {
 					model.addAttribute("producto", new Productos());
 			return "MantenedorProducto";
 		}
+		
 		@GetMapping("/cargarMantenedorEmpleado")
 		public String abrirpagMantenedorEmpleado(Model model) {
 			model.addAttribute("lstPuesto", repoPues.findAll());
@@ -131,6 +137,28 @@ public class MuebleriaController {
 		        model.addAttribute("usuario", nombreUsuario);
 
 		        return "Consulta";
+		    } else {
+		        // Manejar el caso cuando el usuario no ha iniciado sesión
+		        return "Login";
+		    }
+			
+		}
+		@GetMapping("/cargarReporte")
+		public String abrirpagReporte(Model model) {
+			 List<Boleta> boleta = repoBol.findAll();
+				model.addAttribute("lstBoleta", repoBol.findAll());
+				// enviar un atributo de tipo producto para guardar la informacion
+						model.addAttribute("boleta", new Boleta());
+				return "Reporte";
+			
+		}
+		@GetMapping("/cargarIndex")
+		public String abrirpagIndex( Model model , HttpSession session) {
+			Usuario usuario = (Usuario) session.getAttribute("u");
+		    if (usuario != null) {
+		    	session.setAttribute("u",usuario );
+				model.addAttribute("u", usuario);
+				return "index";
 		    } else {
 		        // Manejar el caso cuando el usuario no ha iniciado sesión
 		        return "Login";

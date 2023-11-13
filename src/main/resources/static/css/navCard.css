@@ -1,0 +1,195 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+background-color: #FFFBF7;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.titulo{
+    font-size: 2em;
+    color: black;
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+
+.navigation a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transform-origin: right;
+    transform: scaleZ(0);
+    transition: transform .2s;
+
+
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+
+.navigation .btnCompra{
+    width: 80px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 300;
+    margin-left: 50px;
+    transition: .5s;
+}
+.navigation .icon{
+    font-size: 1.8em;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.titulo-container {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+    width: 620px;
+    height: 380px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+    gap: 60px;
+    overflow: visible;
+   }
+   
+   .card .item {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+   }
+
+
+.item:hover {
+    transform: scale(0.95);
+    transition: all 0.3s;
+   }
+   
+ 
+   
+   .item--1 {
+    background: #DCCED0;
+   }
+   
+   .item--2 {
+    background: #E0D5CC;
+   }
+   
+   .item--3 {
+    background: #E1C8C3;
+   }
+   
+   .item--4 {
+    background: #BEA6A1;
+   }
+   
+   .quantity {
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: 600;
+   }
+   
+
+
+   .card .icon{
+    font-size: 3em;
+   }
+
+  .item--1 .ion-icon{
+    color: #BEAFB7;
+  }
+  .item--2 .ion-icon{
+    color: #C7B3B0;
+}
+
+.item--3 .ion-icon{
+    color: #C4AAAE;
+}
+
+.item--4 .ion-icon{
+    color: #A98F94;
+}
+ .item--1  .ion-icon:hover{
+    color: #7A7889;
+   }
+.item--2 .ion-icon:hover{
+    color: #857887;
+}
+.item--3 .ion-icon:hover{
+    color: #8D7F90;
+}
+
+.item--4 .ion-icon:hover{
+    color: #71687C;
+}
+

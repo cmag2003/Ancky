@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/css/mantenedor.css" />
+    <title>Document</title>
+</head>
+
+
+
+<body>
+  <header>
+    <h2 class="titulo">Pasteleria Ancky</h2>
+    <nav class="navigation">
+        <a  href="/cargarInicio" >Inicio</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+        <a  href="/cargarConsulta" >Consultas</a>     
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+    
+  </header>
+
+    <form action="/cliente/grabar" method="post" th:object="${cliente}" class="form">
+        <p class="title">MANTENEDOR USUARIO </p>   
+        <label>
+            <input required="" placeholder="" type="text" class="input" th:field="*{cod_cliente}">
+            <span>codigo</span>
+        </label> 
+            
+        <label>
+            <input required="" placeholder="" type="text" class="input" th:field="*{nombre}">
+            <span>Nombre</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="text" class="input" th:field="*{apellido}"  >
+            <span>Apellido</span>
+        </label>
+        <div class="button-container">
+            <button href="/cliente/grabar" class="submit">Modificar</button>
+            <a href="/cargarMantenedorCliente" class="submit">Limpiar</a>
+          <button href="/cliente/grabar" class="submit" >Crear</button>
+            <a href="/reportecliente"  target="_blank" class="submit" > PDF</a>
+            
+        </div>
+    </form>
+    
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+</script>
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" ></script>

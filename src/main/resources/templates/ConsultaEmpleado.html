@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/css/consulta.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h2 class="titulo">Pasteleria Ancky</h2>
+    <nav class="navigation">
+        <a  href="/cargarInicio" >Inicio</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+        <a  href="/cargarConsulta" >Consultas</a>     
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+    
+  </header>
+    
+    
+    <section class="container">
+        <div class="titulo-consulta"> 
+            <h3 >Consulta Empleado</h3>
+        </div>
+        
+   <form action="/empleado/buscar" method="post" class="form">
+            <ion-icon class="search" name="search"></ion-icon>
+            <input type="text" name="nombre" id="nombre" placeholder="buscar por nombre"  >
+           <button type="submit" >Buscar</button>
+        </form>
+
+        <div class="table-wrapper">
+            <table class="content-table"  th:object="${empleado}" >
+                <thead>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Puesto</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+						 <tr th:each="empleado : ${lstEmpleado}">
+                           <td th:text="${empleado.codigo}"></td>
+                           <td th:text="${empleado.nombre}"></td>
+        				   <td th:text="${empleado.apellido}"></td>
+        				   <td th:text="${empleado.puesto}"></td>
+        				   
+                    </td>
+							<td><a class="submit-update" th:href="@{/cargar/actualizarEmp/{codEmp}(codEmp=${empleado.codigo})}">Editar</a> <a th:href="@{/empleado/eliminar/{codEmp}(codEmp=${empleado.codigo})}" class="submit-danger">Eliminar</a></td>
+						</tr>
+					</tbody>
+            </table>
+        </div>
+    </section>
+
+    
+    
+    
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" ></script>
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

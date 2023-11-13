@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/css/mantenedor.css" />
+    <title>Document</title>
+</head>
+
+<body>
+	 <header>
+    <h2 class="titulo">Pasteleria Ancky</h2>
+    <nav class="navigation">
+        <a  href="/cargarInicio" >Inicio</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+        <a  href="/cargarConsulta" >Consultas</a>     
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+    
+  </header>
+ 
+  <form class="form" action="/productos/grabar" method="post" th:object="${producto}" >
+        <p class="title">MANTENEDOR PRODUCTO </p>   
+        <label>
+            <input  placeholder="" type="number" class="input"  th:field="*{cod_prod}">
+            <span>codigo</span>
+        </label> 
+       <select  th:field="*{cod_provee}"
+		      id="inputState" class="form-control">
+		        <option  class="option" selected value = "-1">Proveedor</option>
+		         
+		        			        <option  th:each="a : ${lstProve}" 
+								 th:value="${a.cod_provee}"
+								 th:text="${a.razon}"></option>
+				        	
+		      </select>
+		    
+        <label>
+            <input  placeholder="" type="text" class="input"  th:field="*{descripcion}">
+            <span>Nombre</span>
+        </label>
+   		<select th:field="*{idtipo}"  
+		      id="inputState" class="form-control">
+		        <option class="option" selected value = "-1">Tipo</option>
+		        
+		        			        <option  th:each="t : ${lstTipo}" 
+								 th:value="${t.idtipo}"
+								 th:text="${t.des_tipo}"></option>
+				        	
+		      </select>
+        <label>
+            <input  placeholder="" type="number" class="input" th:field="*{stock}">
+            <span>Stock</span>
+        </label>
+        <label>
+            <input  placeholder="" type="text" class="input"  th:field="*{precio}">
+            <span>Precio</span>
+        </label>
+        
+          
+        <div class="button-container">
+            <button href="/productos/grabar" class="submit">Modificar</button>
+            <a href="/cargarMantenedorProductos" class="submit" >Limpiar</a>
+          <button  class="submit" name="btn" value="reg" >Crear</button>
+          <button class="submit" name="btn"  value="fil" >Filtro</button>
+            <a href="/reporteproducto"  target="_blank" class="submit"  > PDF</a>
+            
+             
+        </div>
+       
+    </form>
+   
+ 
+  
+  
+  
+ 
+<body>
+</html>
+
+
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

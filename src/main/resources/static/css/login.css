@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.contenedor{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform .5s, height .2s ease;
+    
+}
+
+.contenedor.active-popup{
+    transform:scale(1);
+}
+.contenedor.active{
+    height: 720px;
+}
+.contenedor .form-box{
+    width: 100%;
+    padding: 10px;
+}
+
+.contenedor.contenedor.form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.contenedor.contenedor.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.contenedor .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+   
+}
+
+.contenedor.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.form-box h2{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+
+
+}
+
+.input-box label{
+    position: absolute;
+    top: 55%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+
+
+}
+.input-box input:focus-label,
+.input-box input:valid-label{
+    top: -7px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 10px;
+    font-size: 1.8em;
+    color: black;
+    line-height: 60px;
+}
+
+
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: rgb(26, 166, 152);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9rem;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    margin-top: 5%;
+}
+.login-register p a{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+.statement{
+    margin-top: 5%;
+    color: black;
+}
+.form-control{
+    margin-top: 5%;
+}
+.input-text::placeholder{
+    color: rgb(192, 192, 192);
+}
+

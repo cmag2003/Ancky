@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/css/mantenedor.css" />
+    <title>Document</title>
+</head>
+
+<body>
+	
+	 <header>
+    <h2 class="titulo">Muebleria</h2>
+    <nav class="navigation">
+        <a  href="/cargarInicio" >Pasteleria Ancky</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+        <a  href="/cargarConsulta" >Consultas</a>     
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+    
+  </header>
+  
+  
+  <form class="form" action="/proveedores/grabar" method="post" th:object="${proveedores}">
+        <p class="title">MANTENEDOR PROVEEDOR </p>   
+        <label>
+            <input required="" placeholder="" type="text" class="input"  th:field="*{cod_provee}">
+            <span>codigo</span>
+        </label> 
+            
+        <label>
+            <input required="" placeholder="" type="text" class="input"  th:field="*{razon}">
+            <span>Razon social</span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="text" class="input"  th:field="*{ruc}">
+            <span>RUC</span>
+        </label>
+        <div class="button-container">
+            <button href="/proveedores/grabar" class="submit">Modificar</button>
+            <a href="/cargarMantenedorProveedores" class="submit">Limpiar</a>
+          <button href="/proveedores/grabar" class="submit" >Crear</button>
+            <a href="/reporteproveedor"  target="_blank" class="submit" > PDF</a>
+            
+        </div>
+    </form>
+  
+  
+
+</body>
+</html>
+<script type="text/javascript">
+function Viajar(){
+
+	location.replace('\Mantenedores.html');
+	
+}
+</script>
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="/css/mantenedor.css" />
+    <title>Document</title>
+</head>
+
+<body>
+	 <header>
+    <h2 class="titulo">Pasteleria Ancky</h2>
+    <nav class="navigation">
+        <a  href="/cargarInicio" >Inicio</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+        <a  href="/cargarConsulta" >Consultas</a>     
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+    </header>
+    <form class="form" action="/empleado/grabar" method="post" th:object="${empleado}">
+        <p class="title">MANTENEDOR EMPLEADO </p>   
+        <label>
+            <input  placeholder="" type="text" class="input" th:field="*{codigo}">
+            <span>codigo</span>
+        </label> 
+            
+        <label>
+            <input  placeholder="" type="text" class="input"  th:field="*{nombre}">
+            <span>Nombre</span>
+        </label>
+        <label>
+            <input  placeholder="" type="text" class="input" th:field="*{apellido}">
+            <span>Apellido</span>
+        </label>
+        <option  class="option" for="inputState">Puesto</option> <select th:field="*{puesto}"
+								id="inputState" class="form-control">
+								<option   selected value="0">Seleccione...</option> 
+								<option  th:each="p : ${lstPuesto}" 
+								 th:value="${p.id_puesto}"
+								 th:text="${p.des_puesto}" ></option>
+								
+							</select>
+        
+        
+        <div class="button-container">
+            <button href="/empleado/grabar" class="submit">Modificar</button>
+            <a href="/cargarMantenedorEmpleado" class="submit">Limpiar</a>
+          <button  class="submit" name="btn" value="reg" >Crear</button>
+           <button class="submit" name="btn"  value="fil" >Filtro</button>
+            <a href="/reporteempleado"  target="_blank" class="submit" > PDF</a>
+            
+        </div>
+       
+    </form>
+
+    
+ 
+	
+</body>
+</html>
+<script type="text/javascript">
+function Viajar(){
+
+	location.replace('\Mantenedores.html');
+	
+}
+</script>
+
+
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" ></script>

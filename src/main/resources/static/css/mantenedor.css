@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  
+    
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+background-color: #FFFBF7;
+    background-size: cover;
+    background-position: center;
+   
+    
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    
+  
+}
+.titulo{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+
+.navigation a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transform-origin: right;
+    transform: scaleZ(0);
+    transition: transform .2s;
+
+
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+
+.navigation .btnCompra{
+    width: 80px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 300;
+    margin-left: 50px;
+    transition: .5s;
+}
+.navigation .icon{
+    font-size: 1.8em;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 650px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+ 
+
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+
+  .form select  {
+    width: 100%;
+    padding: 10px 10px 15px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    color: grey;
+    font-size: 0.9em;
+  }
+ 
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+ 
+  
+  .submit {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    text-align: center;
+  }
+
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between; 
+    
+}
+  
+.submit-danger {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background-color: rgb(231, 85, 80);
+  padding: 8px;
+  border-radius: 10px;
+  flex: 1;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  text-align: center;
+}
+
+
+.submit-danger:hover {
+  background-color: rgb(226, 64, 59);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link  rel="stylesheet" href="/css/Navcard.css" />
+<title>Muebleria S.A.</title>
+</head>
+<body>
+
+  <header>
+    <h2 class="titulo">Pasteleria Ancky</h2>
+   <nav class="navigation">
+        <a  href="/cargarInicio" >Inicio</a>
+        <a  href="/cargarMantenedores" >  Mantenedores</a>     
+         <a  href="/cargarConsulta" >Consultas</a>  
+        <a  href="/cargarReportes" >Reportes</a>
+    </nav>
+  </header>
+    
+  <div class="main-container">  
+    <h1 class="titulo-container">Mantenedores</h1>
+    <div class="card">
+      
+        <div class="item item--1" >
+            <a class="icon"  href="/cargarMantenedorCliente"><ion-icon class="ion-icon" name="person"></ion-icon></a> 
+            <span class="quantity"> Usuarios </span>
+        </div>
+        <div class="item item--2">
+            <a class="icon"  href="/cargarMantenedorProveedores"><ion-icon class="ion-icon" name="home"></ion-icon></a> 
+            <span class="quantity"> Proveedores </span>
+        </div>
+        <div class="item item--3">
+            <a class="icon"  href="/cargarMantenedorProductos"><ion-icon class="ion-icon"  name="bed"></ion-icon></a> 
+            <span class="quantity"> Productos </span>
+        </div>
+        <div class="item item--4">
+            <a class="icon"  href="/cargarMantenedorEmpleado"><ion-icon  class="ion-icon" name="people"></ion-icon></a> 
+            <span class="quantity"> Empleados </span>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="text/javascript">
+
+function Viajar(){
+
+	location.replace('\index.html');
+	
+}
+
+</script>
